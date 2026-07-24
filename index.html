@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocab Slayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Vocab Slayer</h1>
+        <div id="level-display" style="font-weight:bold; color:gold;">ด่านปัจจุบัน: 1</div>
+        <img id="boss-img" src="" style="width:150px; height:150px;">
+        <div id="monster">👹 HP: <span id="hp">100</span></div>
+        <div id="timer" style="color:red; font-weight:bold;">เวลา: 30</div>
+        <p id="question">กำลังโหลด...</p>
+        <button id="b0"></button>
+        <button id="b1"></button>
+        <button id="b2"></button>
+        <button id="b3"></button>
+        <button onclick="resetGame()" style="background-color: #e74c3c; margin-top: 20px;">รีเซ็ตเกม</button>
+    </div>
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
