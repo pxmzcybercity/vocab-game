@@ -2,23 +2,38 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Vocab Slayer</title>
     <link rel="stylesheet" href="style.css">
+    <title>Vocab Slayer</title>
 </head>
 <body>
-    <div id="game-container">
-        <h1>Vocab Slayer</h1>
+    <!-- หน้าจอเริ่มเกม -->
+    <div id="start-screen">
+        <h1 style="color: gold;">Vocab Slayer</h1>
+        <button onclick="startGame()" style="background: #2ecc71; padding: 20px; font-size: 1.5rem;">เริ่มเกม / Start Game</button>
+    </div>
+
+    <!-- หน้าจอเกม -->
+    <div id="game-container" style="display:none;">
+        <h1 id="game-title">Vocab Slayer</h1>
+        <div id="score-board" style="color: #2ecc71; font-weight: bold; margin-bottom: 5px;">คะแนนรวม: 0</div>
         <div id="level-display" style="font-weight:bold; color:gold;">ด่านปัจจุบัน: 1</div>
-        <img id="boss-img" src="" style="width:150px; height:150px;">
+        <img id="boss-img" src="" style="width:150px; height:150px; border-radius:50%; margin-bottom:10px;">
         <div id="monster">👹 HP: <span id="hp">100</span></div>
         <div id="timer" style="color:red; font-weight:bold;">เวลา: 30</div>
-        <p id="question">กำลังโหลด...</p>
-        <button id="b0"></button>
-        <button id="b1"></button>
-        <button id="b2"></button>
-        <button id="b3"></button>
-        <button onclick="resetGame()" style="background-color: #e74c3c; margin-top: 20px;">รีเซ็ตเกม</button>
+        <p id="question"></p>
+        <button id="b0"></button> <button id="b1"></button>
+        <button id="b2"></button> <button id="b3"></button>
+        <button onclick="resetGame()" style="background: #e74c3c; margin-top: 10px;">รีเซ็ตเกม</button>
     </div>
+
+    <!-- หน้าจอจบเกม -->
+    <div id="victory-screen" style="display:none; text-align:center; padding: 50px;">
+        <h1 style="color: gold; font-size: 1.5rem;">Congratulations!</h1>
+        <p style="color: white; font-size: 1rem;">ยินดีด้วยผู้กล้า คุณได้ผ่านด่านสุดท้ายแล้ว!</p>
+        <div id="final-score" style="color: #2ecc71; font-size: 5rem; font-weight: bold; margin: 20px 0;"></div>
+        <button onclick="resetGame()" style="background: #e74c3c; padding: 15px 30px; font-size: 1.2rem;">เริ่มเกมใหม่ / Restart</button>
+    </div>
+
     <script src="words.js"></script>
     <script src="script.js"></script>
 </body>
