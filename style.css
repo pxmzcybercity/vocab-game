@@ -1,80 +1,19 @@
-/* จัดพื้นหลังและฟอนต์ให้ดูเหมือนเกม */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #2c3e50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: white;
+body { font-family: sans-serif; background-color: #2c3e50; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: white; }
+#game-container, #start-screen, #victory-screen { background: #34495e; padding: 25px; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0,0,0,0.3); width: 90%; max-width: 400px; text-align: center; border: 3px solid #f1c40f; box-sizing: border-box; }
+h1 { color: #f1c40f; font-size: 1.5rem; margin-bottom: 15px; }
+#score-board { color: #2ecc71; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+#level-display { font-weight:bold; color:gold; margin-bottom: 10px; }
+#monster { font-size: 1.2rem; margin: 10px 0; background: #e74c3c; padding: 8px; border-radius: 5px; }
+#timer { color: #ff7675; font-weight:bold; margin: 15px 0; font-size: 1.2rem; }
+#question { font-size: 1.2rem; margin: 15px 0; min-height: 50px; font-weight: bold; }
+
+button { 
+    display: block; width: 100%; margin: 12px 0; padding: 14px; font-size: 1rem; cursor: pointer; 
+    border: none; border-radius: 8px; font-weight: bold; background-color: #ecf0f1; color: #2c3e50;
 }
-
-/* กล่องหลักของเกม ปรับให้ยืดหยุ่นตามมือถือ */
-#game-container {
-    background: #34495e;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
-    width: 90%;           /* ปรับให้กว้าง 90% ของหน้าจอ */
-    max-width: 400px;     /* ไม่ให้กว้างเกิน 400px ในหน้าจอคอม */
-    text-align: center;
-    border: 3px solid #f1c40f;
-    box-sizing: border-box; /* ป้องกัน padding ทำให้กล่องล้น */
-}
-
-/* หัวข้อและหลอดเลือด */
-h1 { color: #f1c40f; margin-bottom: 10px; font-size: 1.5rem; }
-
-#level-display { margin-bottom: 10px; }
-
-#boss-img {
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 2px solid white;
-}
-
-#monster {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    background: #e74c3c;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#timer {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-#question {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    min-height: 50px;
-    padding: 0 10px;
-}
-
-/* ตกแต่งปุ่ม */
-button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    border: none;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #bdc3c7;
-    transform: scale(1.02);
-}
-
+/* บังคับสีเขียวแดงให้แสดงผลชัดเจนแม้ปุ่มจะถูกล็อก (disabled) */
+button.correct { background-color: #2ecc71 !important; color: white !important; opacity: 1 !important; }
+button.wrong { background-color: #e74c3c !important; color: white !important; opacity: 1 !important; }
 button:active {
     transform: scale(0.98);
 }
